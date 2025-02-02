@@ -24,8 +24,14 @@ mixin _$PriceItem {
   String get name => throw _privateConstructorUsedError;
   double? get price => throw _privateConstructorUsedError;
   double? get priceEu => throw _privateConstructorUsedError;
+  double? get startPriceEu => throw _privateConstructorUsedError;
+  double? get discountPriceEu => throw _privateConstructorUsedError;
   double? get priceUsd => throw _privateConstructorUsedError;
+  double? get startPriceUsd => throw _privateConstructorUsedError;
+  double? get discountPriceUsd => throw _privateConstructorUsedError;
   double? get pricePen => throw _privateConstructorUsedError;
+  double? get startPricePen => throw _privateConstructorUsedError;
+  double? get discountPricePen => throw _privateConstructorUsedError;
   double? get priceAED => throw _privateConstructorUsedError;
   double? get priceGBP => throw _privateConstructorUsedError;
   double? get priceJPY => throw _privateConstructorUsedError;
@@ -53,8 +59,14 @@ abstract class $PriceItemCopyWith<$Res> {
       String name,
       double? price,
       double? priceEu,
+      double? startPriceEu,
+      double? discountPriceEu,
       double? priceUsd,
+      double? startPriceUsd,
+      double? discountPriceUsd,
       double? pricePen,
+      double? startPricePen,
+      double? discountPricePen,
       double? priceAED,
       double? priceGBP,
       double? priceJPY,
@@ -82,8 +94,14 @@ class _$PriceItemCopyWithImpl<$Res, $Val extends PriceItem>
     Object? name = null,
     Object? price = freezed,
     Object? priceEu = freezed,
+    Object? startPriceEu = freezed,
+    Object? discountPriceEu = freezed,
     Object? priceUsd = freezed,
+    Object? startPriceUsd = freezed,
+    Object? discountPriceUsd = freezed,
     Object? pricePen = freezed,
+    Object? startPricePen = freezed,
+    Object? discountPricePen = freezed,
     Object? priceAED = freezed,
     Object? priceGBP = freezed,
     Object? priceJPY = freezed,
@@ -108,13 +126,37 @@ class _$PriceItemCopyWithImpl<$Res, $Val extends PriceItem>
           ? _value.priceEu
           : priceEu // ignore: cast_nullable_to_non_nullable
               as double?,
+      startPriceEu: freezed == startPriceEu
+          ? _value.startPriceEu
+          : startPriceEu // ignore: cast_nullable_to_non_nullable
+              as double?,
+      discountPriceEu: freezed == discountPriceEu
+          ? _value.discountPriceEu
+          : discountPriceEu // ignore: cast_nullable_to_non_nullable
+              as double?,
       priceUsd: freezed == priceUsd
           ? _value.priceUsd
           : priceUsd // ignore: cast_nullable_to_non_nullable
               as double?,
+      startPriceUsd: freezed == startPriceUsd
+          ? _value.startPriceUsd
+          : startPriceUsd // ignore: cast_nullable_to_non_nullable
+              as double?,
+      discountPriceUsd: freezed == discountPriceUsd
+          ? _value.discountPriceUsd
+          : discountPriceUsd // ignore: cast_nullable_to_non_nullable
+              as double?,
       pricePen: freezed == pricePen
           ? _value.pricePen
           : pricePen // ignore: cast_nullable_to_non_nullable
+              as double?,
+      startPricePen: freezed == startPricePen
+          ? _value.startPricePen
+          : startPricePen // ignore: cast_nullable_to_non_nullable
+              as double?,
+      discountPricePen: freezed == discountPricePen
+          ? _value.discountPricePen
+          : discountPricePen // ignore: cast_nullable_to_non_nullable
               as double?,
       priceAED: freezed == priceAED
           ? _value.priceAED
@@ -157,8 +199,14 @@ abstract class _$$PriceItemImplCopyWith<$Res>
       String name,
       double? price,
       double? priceEu,
+      double? startPriceEu,
+      double? discountPriceEu,
       double? priceUsd,
+      double? startPriceUsd,
+      double? discountPriceUsd,
       double? pricePen,
+      double? startPricePen,
+      double? discountPricePen,
       double? priceAED,
       double? priceGBP,
       double? priceJPY,
@@ -184,8 +232,14 @@ class __$$PriceItemImplCopyWithImpl<$Res>
     Object? name = null,
     Object? price = freezed,
     Object? priceEu = freezed,
+    Object? startPriceEu = freezed,
+    Object? discountPriceEu = freezed,
     Object? priceUsd = freezed,
+    Object? startPriceUsd = freezed,
+    Object? discountPriceUsd = freezed,
     Object? pricePen = freezed,
+    Object? startPricePen = freezed,
+    Object? discountPricePen = freezed,
     Object? priceAED = freezed,
     Object? priceGBP = freezed,
     Object? priceJPY = freezed,
@@ -210,13 +264,37 @@ class __$$PriceItemImplCopyWithImpl<$Res>
           ? _value.priceEu
           : priceEu // ignore: cast_nullable_to_non_nullable
               as double?,
+      startPriceEu: freezed == startPriceEu
+          ? _value.startPriceEu
+          : startPriceEu // ignore: cast_nullable_to_non_nullable
+              as double?,
+      discountPriceEu: freezed == discountPriceEu
+          ? _value.discountPriceEu
+          : discountPriceEu // ignore: cast_nullable_to_non_nullable
+              as double?,
       priceUsd: freezed == priceUsd
           ? _value.priceUsd
           : priceUsd // ignore: cast_nullable_to_non_nullable
               as double?,
+      startPriceUsd: freezed == startPriceUsd
+          ? _value.startPriceUsd
+          : startPriceUsd // ignore: cast_nullable_to_non_nullable
+              as double?,
+      discountPriceUsd: freezed == discountPriceUsd
+          ? _value.discountPriceUsd
+          : discountPriceUsd // ignore: cast_nullable_to_non_nullable
+              as double?,
       pricePen: freezed == pricePen
           ? _value.pricePen
           : pricePen // ignore: cast_nullable_to_non_nullable
+              as double?,
+      startPricePen: freezed == startPricePen
+          ? _value.startPricePen
+          : startPricePen // ignore: cast_nullable_to_non_nullable
+              as double?,
+      discountPricePen: freezed == discountPricePen
+          ? _value.discountPricePen
+          : discountPricePen // ignore: cast_nullable_to_non_nullable
               as double?,
       priceAED: freezed == priceAED
           ? _value.priceAED
@@ -254,8 +332,14 @@ class _$PriceItemImpl implements _PriceItem {
       required this.name,
       this.price,
       this.priceEu,
+      this.startPriceEu,
+      this.discountPriceEu,
       this.priceUsd,
+      this.startPriceUsd,
+      this.discountPriceUsd,
       this.pricePen,
+      this.startPricePen,
+      this.discountPricePen,
       this.priceAED,
       this.priceGBP,
       this.priceJPY,
@@ -275,9 +359,21 @@ class _$PriceItemImpl implements _PriceItem {
   @override
   final double? priceEu;
   @override
+  final double? startPriceEu;
+  @override
+  final double? discountPriceEu;
+  @override
   final double? priceUsd;
   @override
+  final double? startPriceUsd;
+  @override
+  final double? discountPriceUsd;
+  @override
   final double? pricePen;
+  @override
+  final double? startPricePen;
+  @override
+  final double? discountPricePen;
   @override
   final double? priceAED;
   @override
@@ -293,7 +389,7 @@ class _$PriceItemImpl implements _PriceItem {
 
   @override
   String toString() {
-    return 'PriceItem(id: $id, name: $name, price: $price, priceEu: $priceEu, priceUsd: $priceUsd, pricePen: $pricePen, priceAED: $priceAED, priceGBP: $priceGBP, priceJPY: $priceJPY, category: $category, discountState: $discountState, updatedAt: $updatedAt)';
+    return 'PriceItem(id: $id, name: $name, price: $price, priceEu: $priceEu, startPriceEu: $startPriceEu, discountPriceEu: $discountPriceEu, priceUsd: $priceUsd, startPriceUsd: $startPriceUsd, discountPriceUsd: $discountPriceUsd, pricePen: $pricePen, startPricePen: $startPricePen, discountPricePen: $discountPricePen, priceAED: $priceAED, priceGBP: $priceGBP, priceJPY: $priceJPY, category: $category, discountState: $discountState, updatedAt: $updatedAt)';
   }
 
   @override
@@ -305,10 +401,22 @@ class _$PriceItemImpl implements _PriceItem {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.price, price) || other.price == price) &&
             (identical(other.priceEu, priceEu) || other.priceEu == priceEu) &&
+            (identical(other.startPriceEu, startPriceEu) ||
+                other.startPriceEu == startPriceEu) &&
+            (identical(other.discountPriceEu, discountPriceEu) ||
+                other.discountPriceEu == discountPriceEu) &&
             (identical(other.priceUsd, priceUsd) ||
                 other.priceUsd == priceUsd) &&
+            (identical(other.startPriceUsd, startPriceUsd) ||
+                other.startPriceUsd == startPriceUsd) &&
+            (identical(other.discountPriceUsd, discountPriceUsd) ||
+                other.discountPriceUsd == discountPriceUsd) &&
             (identical(other.pricePen, pricePen) ||
                 other.pricePen == pricePen) &&
+            (identical(other.startPricePen, startPricePen) ||
+                other.startPricePen == startPricePen) &&
+            (identical(other.discountPricePen, discountPricePen) ||
+                other.discountPricePen == discountPricePen) &&
             (identical(other.priceAED, priceAED) ||
                 other.priceAED == priceAED) &&
             (identical(other.priceGBP, priceGBP) ||
@@ -331,8 +439,14 @@ class _$PriceItemImpl implements _PriceItem {
       name,
       price,
       priceEu,
+      startPriceEu,
+      discountPriceEu,
       priceUsd,
+      startPriceUsd,
+      discountPriceUsd,
       pricePen,
+      startPricePen,
+      discountPricePen,
       priceAED,
       priceGBP,
       priceJPY,
@@ -362,8 +476,14 @@ abstract class _PriceItem implements PriceItem {
       required final String name,
       final double? price,
       final double? priceEu,
+      final double? startPriceEu,
+      final double? discountPriceEu,
       final double? priceUsd,
+      final double? startPriceUsd,
+      final double? discountPriceUsd,
       final double? pricePen,
+      final double? startPricePen,
+      final double? discountPricePen,
       final double? priceAED,
       final double? priceGBP,
       final double? priceJPY,
@@ -383,9 +503,21 @@ abstract class _PriceItem implements PriceItem {
   @override
   double? get priceEu;
   @override
+  double? get startPriceEu;
+  @override
+  double? get discountPriceEu;
+  @override
   double? get priceUsd;
   @override
+  double? get startPriceUsd;
+  @override
+  double? get discountPriceUsd;
+  @override
   double? get pricePen;
+  @override
+  double? get startPricePen;
+  @override
+  double? get discountPricePen;
   @override
   double? get priceAED;
   @override

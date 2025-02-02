@@ -1,4 +1,3 @@
-// lib/src/features/price_table/domain/models/price_item.dart
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'price_item.freezed.dart';
@@ -11,8 +10,14 @@ class PriceItem with _$PriceItem {
     required String name,
     double? price,
     double? priceEu,
+    double? startPriceEu,
+    double? discountPriceEu,
     double? priceUsd,
+    double? startPriceUsd,
+    double? discountPriceUsd,
     double? pricePen,
+    double? startPricePen,
+    double? discountPricePen,
     double? priceAED,
     double? priceGBP,
     double? priceJPY,
