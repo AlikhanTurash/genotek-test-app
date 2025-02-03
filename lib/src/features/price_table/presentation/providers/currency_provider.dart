@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../domain/models/currency.dart';
 
-final selectedCurrencyProvider = StateProvider<Currency>((ref) => Currency.eur);
+final selectedCurrencyProvider = StateProvider<Currency>((ref) => Currency.rub);
 
 final searchQueryProvider = StateProvider<String>((ref) => '');
 
