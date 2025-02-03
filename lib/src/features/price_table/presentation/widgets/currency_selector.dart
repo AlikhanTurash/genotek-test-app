@@ -43,8 +43,6 @@ class _CurrencySelectorState extends ConsumerState<CurrencySelector> {
   Widget build(BuildContext context) {
     final selectedCurrency = ref.watch(selectedCurrencyProvider);
 
-    final filteredCurrencies = ref.watch(filteredCurrenciesStateProvider);
-
     return IconButton(
       icon: Text(
         selectedCurrency.symbol,
