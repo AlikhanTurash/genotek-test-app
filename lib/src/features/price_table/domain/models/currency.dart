@@ -44,6 +44,7 @@ enum Currency {
   uyu('UYU', 'Uruguayan Peso', '\$U'),
   chf('CHF', 'Swiss Franc', 'CHF'),
   nok('NOK', 'Norwegian Krone', 'kr'),
+  rub('RUB', 'Russian Ruble', '₽'),
   gbp('GBP', 'British Pound Sterling', '£');
 
   final String code;

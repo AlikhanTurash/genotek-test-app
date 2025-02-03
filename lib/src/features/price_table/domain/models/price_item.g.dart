@@ -10,6 +10,8 @@ _$PriceItemImpl _$$PriceItemImplFromJson(Map<String, dynamic> json) =>
     _$PriceItemImpl(
       id: json['id'] as String,
       name: json['name'] as String,
+      startPrice: (json['startPrice'] as num?)?.toDouble(),
+      discountPrice: (json['discountPrice'] as num?)?.toDouble(),
       price: (json['price'] as num?)?.toDouble(),
       priceEu: (json['priceEu'] as num?)?.toDouble(),
       startPriceEu: (json['startPriceEu'] as num?)?.toDouble(),
@@ -24,7 +26,10 @@ _$PriceItemImpl _$$PriceItemImplFromJson(Map<String, dynamic> json) =>
       discountPricePen: (json['discountPricePen'] as num?)?.toDouble(),
       discountStatePen: json['discountStatePen'] as bool?,
       priceAED: (json['priceAED'] as num?)?.toDouble(),
-      priceGBP: (json['priceGBP'] as num?)?.toDouble(),
+      priceGbp: (json['priceGbp'] as num?)?.toDouble(),
+      startPriceGbp: (json['startPriceGbp'] as num?)?.toDouble(),
+      discountPriceGbp: (json['discountPriceGbp'] as num?)?.toDouble(),
+      discountStateGbp: json['discountStateGbp'] as bool?,
       priceJPY: (json['priceJPY'] as num?)?.toDouble(),
       category: json['category'] as String,
       discountState: json['discountState'] as bool,
@@ -199,15 +204,14 @@ _$PriceItemImpl _$$PriceItemImplFromJson(Map<String, dynamic> json) =>
       startPriceNok: (json['startPriceNok'] as num?)?.toDouble(),
       discountPriceNok: (json['discountPriceNok'] as num?)?.toDouble(),
       discountStateNok: json['discountStateNok'] as bool?,
-      startPriceGbp: (json['startPriceGbp'] as num?)?.toDouble(),
-      discountPriceGbp: (json['discountPriceGbp'] as num?)?.toDouble(),
-      discountStateGbp: json['discountStateGbp'] as bool?,
     );
 
 Map<String, dynamic> _$$PriceItemImplToJson(_$PriceItemImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'startPrice': instance.startPrice,
+      'discountPrice': instance.discountPrice,
       'price': instance.price,
       'priceEu': instance.priceEu,
       'startPriceEu': instance.startPriceEu,
@@ -222,7 +226,10 @@ Map<String, dynamic> _$$PriceItemImplToJson(_$PriceItemImpl instance) =>
       'discountPricePen': instance.discountPricePen,
       'discountStatePen': instance.discountStatePen,
       'priceAED': instance.priceAED,
-      'priceGBP': instance.priceGBP,
+      'priceGbp': instance.priceGbp,
+      'startPriceGbp': instance.startPriceGbp,
+      'discountPriceGbp': instance.discountPriceGbp,
+      'discountStateGbp': instance.discountStateGbp,
       'priceJPY': instance.priceJPY,
       'category': instance.category,
       'discountState': instance.discountState,
@@ -395,7 +402,4 @@ Map<String, dynamic> _$$PriceItemImplToJson(_$PriceItemImpl instance) =>
       'startPriceNok': instance.startPriceNok,
       'discountPriceNok': instance.discountPriceNok,
       'discountStateNok': instance.discountStateNok,
-      'startPriceGbp': instance.startPriceGbp,
-      'discountPriceGbp': instance.discountPriceGbp,
-      'discountStateGbp': instance.discountStateGbp,
     };

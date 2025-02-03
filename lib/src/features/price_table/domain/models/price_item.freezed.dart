@@ -22,6 +22,8 @@ PriceItem _$PriceItemFromJson(Map<String, dynamic> json) {
 mixin _$PriceItem {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  double? get startPrice => throw _privateConstructorUsedError;
+  double? get discountPrice => throw _privateConstructorUsedError;
   double? get price => throw _privateConstructorUsedError;
   double? get priceEu => throw _privateConstructorUsedError;
   double? get startPriceEu => throw _privateConstructorUsedError;
@@ -36,7 +38,10 @@ mixin _$PriceItem {
   double? get discountPricePen => throw _privateConstructorUsedError;
   bool? get discountStatePen => throw _privateConstructorUsedError;
   double? get priceAED => throw _privateConstructorUsedError;
-  double? get priceGBP => throw _privateConstructorUsedError;
+  double? get priceGbp => throw _privateConstructorUsedError;
+  double? get startPriceGbp => throw _privateConstructorUsedError;
+  double? get discountPriceGbp => throw _privateConstructorUsedError;
+  bool? get discountStateGbp => throw _privateConstructorUsedError;
   double? get priceJPY => throw _privateConstructorUsedError;
   String get category => throw _privateConstructorUsedError;
   bool get discountState => throw _privateConstructorUsedError;
@@ -209,9 +214,6 @@ mixin _$PriceItem {
   double? get startPriceNok => throw _privateConstructorUsedError;
   double? get discountPriceNok => throw _privateConstructorUsedError;
   bool? get discountStateNok => throw _privateConstructorUsedError;
-  double? get startPriceGbp => throw _privateConstructorUsedError;
-  double? get discountPriceGbp => throw _privateConstructorUsedError;
-  bool? get discountStateGbp => throw _privateConstructorUsedError;
 
   /// Serializes this PriceItem to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -231,6 +233,8 @@ abstract class $PriceItemCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
+      double? startPrice,
+      double? discountPrice,
       double? price,
       double? priceEu,
       double? startPriceEu,
@@ -245,7 +249,10 @@ abstract class $PriceItemCopyWith<$Res> {
       double? discountPricePen,
       bool? discountStatePen,
       double? priceAED,
-      double? priceGBP,
+      double? priceGbp,
+      double? startPriceGbp,
+      double? discountPriceGbp,
+      bool? discountStateGbp,
       double? priceJPY,
       String category,
       bool discountState,
@@ -417,10 +424,7 @@ abstract class $PriceItemCopyWith<$Res> {
       bool? discountStateChf,
       double? startPriceNok,
       double? discountPriceNok,
-      bool? discountStateNok,
-      double? startPriceGbp,
-      double? discountPriceGbp,
-      bool? discountStateGbp});
+      bool? discountStateNok});
 }
 
 /// @nodoc
@@ -440,6 +444,8 @@ class _$PriceItemCopyWithImpl<$Res, $Val extends PriceItem>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? startPrice = freezed,
+    Object? discountPrice = freezed,
     Object? price = freezed,
     Object? priceEu = freezed,
     Object? startPriceEu = freezed,
@@ -454,7 +460,10 @@ class _$PriceItemCopyWithImpl<$Res, $Val extends PriceItem>
     Object? discountPricePen = freezed,
     Object? discountStatePen = freezed,
     Object? priceAED = freezed,
-    Object? priceGBP = freezed,
+    Object? priceGbp = freezed,
+    Object? startPriceGbp = freezed,
+    Object? discountPriceGbp = freezed,
+    Object? discountStateGbp = freezed,
     Object? priceJPY = freezed,
     Object? category = null,
     Object? discountState = null,
@@ -627,9 +636,6 @@ class _$PriceItemCopyWithImpl<$Res, $Val extends PriceItem>
     Object? startPriceNok = freezed,
     Object? discountPriceNok = freezed,
     Object? discountStateNok = freezed,
-    Object? startPriceGbp = freezed,
-    Object? discountPriceGbp = freezed,
-    Object? discountStateGbp = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -640,6 +646,14 @@ class _$PriceItemCopyWithImpl<$Res, $Val extends PriceItem>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      startPrice: freezed == startPrice
+          ? _value.startPrice
+          : startPrice // ignore: cast_nullable_to_non_nullable
+              as double?,
+      discountPrice: freezed == discountPrice
+          ? _value.discountPrice
+          : discountPrice // ignore: cast_nullable_to_non_nullable
+              as double?,
       price: freezed == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -696,10 +710,22 @@ class _$PriceItemCopyWithImpl<$Res, $Val extends PriceItem>
           ? _value.priceAED
           : priceAED // ignore: cast_nullable_to_non_nullable
               as double?,
-      priceGBP: freezed == priceGBP
-          ? _value.priceGBP
-          : priceGBP // ignore: cast_nullable_to_non_nullable
+      priceGbp: freezed == priceGbp
+          ? _value.priceGbp
+          : priceGbp // ignore: cast_nullable_to_non_nullable
               as double?,
+      startPriceGbp: freezed == startPriceGbp
+          ? _value.startPriceGbp
+          : startPriceGbp // ignore: cast_nullable_to_non_nullable
+              as double?,
+      discountPriceGbp: freezed == discountPriceGbp
+          ? _value.discountPriceGbp
+          : discountPriceGbp // ignore: cast_nullable_to_non_nullable
+              as double?,
+      discountStateGbp: freezed == discountStateGbp
+          ? _value.discountStateGbp
+          : discountStateGbp // ignore: cast_nullable_to_non_nullable
+              as bool?,
       priceJPY: freezed == priceJPY
           ? _value.priceJPY
           : priceJPY // ignore: cast_nullable_to_non_nullable
@@ -1388,18 +1414,6 @@ class _$PriceItemCopyWithImpl<$Res, $Val extends PriceItem>
           ? _value.discountStateNok
           : discountStateNok // ignore: cast_nullable_to_non_nullable
               as bool?,
-      startPriceGbp: freezed == startPriceGbp
-          ? _value.startPriceGbp
-          : startPriceGbp // ignore: cast_nullable_to_non_nullable
-              as double?,
-      discountPriceGbp: freezed == discountPriceGbp
-          ? _value.discountPriceGbp
-          : discountPriceGbp // ignore: cast_nullable_to_non_nullable
-              as double?,
-      discountStateGbp: freezed == discountStateGbp
-          ? _value.discountStateGbp
-          : discountStateGbp // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ) as $Val);
   }
 }
@@ -1415,6 +1429,8 @@ abstract class _$$PriceItemImplCopyWith<$Res>
   $Res call(
       {String id,
       String name,
+      double? startPrice,
+      double? discountPrice,
       double? price,
       double? priceEu,
       double? startPriceEu,
@@ -1429,7 +1445,10 @@ abstract class _$$PriceItemImplCopyWith<$Res>
       double? discountPricePen,
       bool? discountStatePen,
       double? priceAED,
-      double? priceGBP,
+      double? priceGbp,
+      double? startPriceGbp,
+      double? discountPriceGbp,
+      bool? discountStateGbp,
       double? priceJPY,
       String category,
       bool discountState,
@@ -1601,10 +1620,7 @@ abstract class _$$PriceItemImplCopyWith<$Res>
       bool? discountStateChf,
       double? startPriceNok,
       double? discountPriceNok,
-      bool? discountStateNok,
-      double? startPriceGbp,
-      double? discountPriceGbp,
-      bool? discountStateGbp});
+      bool? discountStateNok});
 }
 
 /// @nodoc
@@ -1622,6 +1638,8 @@ class __$$PriceItemImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? startPrice = freezed,
+    Object? discountPrice = freezed,
     Object? price = freezed,
     Object? priceEu = freezed,
     Object? startPriceEu = freezed,
@@ -1636,7 +1654,10 @@ class __$$PriceItemImplCopyWithImpl<$Res>
     Object? discountPricePen = freezed,
     Object? discountStatePen = freezed,
     Object? priceAED = freezed,
-    Object? priceGBP = freezed,
+    Object? priceGbp = freezed,
+    Object? startPriceGbp = freezed,
+    Object? discountPriceGbp = freezed,
+    Object? discountStateGbp = freezed,
     Object? priceJPY = freezed,
     Object? category = null,
     Object? discountState = null,
@@ -1809,9 +1830,6 @@ class __$$PriceItemImplCopyWithImpl<$Res>
     Object? startPriceNok = freezed,
     Object? discountPriceNok = freezed,
     Object? discountStateNok = freezed,
-    Object? startPriceGbp = freezed,
-    Object? discountPriceGbp = freezed,
-    Object? discountStateGbp = freezed,
   }) {
     return _then(_$PriceItemImpl(
       id: null == id
@@ -1822,6 +1840,14 @@ class __$$PriceItemImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      startPrice: freezed == startPrice
+          ? _value.startPrice
+          : startPrice // ignore: cast_nullable_to_non_nullable
+              as double?,
+      discountPrice: freezed == discountPrice
+          ? _value.discountPrice
+          : discountPrice // ignore: cast_nullable_to_non_nullable
+              as double?,
       price: freezed == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -1878,10 +1904,22 @@ class __$$PriceItemImplCopyWithImpl<$Res>
           ? _value.priceAED
           : priceAED // ignore: cast_nullable_to_non_nullable
               as double?,
-      priceGBP: freezed == priceGBP
-          ? _value.priceGBP
-          : priceGBP // ignore: cast_nullable_to_non_nullable
+      priceGbp: freezed == priceGbp
+          ? _value.priceGbp
+          : priceGbp // ignore: cast_nullable_to_non_nullable
               as double?,
+      startPriceGbp: freezed == startPriceGbp
+          ? _value.startPriceGbp
+          : startPriceGbp // ignore: cast_nullable_to_non_nullable
+              as double?,
+      discountPriceGbp: freezed == discountPriceGbp
+          ? _value.discountPriceGbp
+          : discountPriceGbp // ignore: cast_nullable_to_non_nullable
+              as double?,
+      discountStateGbp: freezed == discountStateGbp
+          ? _value.discountStateGbp
+          : discountStateGbp // ignore: cast_nullable_to_non_nullable
+              as bool?,
       priceJPY: freezed == priceJPY
           ? _value.priceJPY
           : priceJPY // ignore: cast_nullable_to_non_nullable
@@ -2570,18 +2608,6 @@ class __$$PriceItemImplCopyWithImpl<$Res>
           ? _value.discountStateNok
           : discountStateNok // ignore: cast_nullable_to_non_nullable
               as bool?,
-      startPriceGbp: freezed == startPriceGbp
-          ? _value.startPriceGbp
-          : startPriceGbp // ignore: cast_nullable_to_non_nullable
-              as double?,
-      discountPriceGbp: freezed == discountPriceGbp
-          ? _value.discountPriceGbp
-          : discountPriceGbp // ignore: cast_nullable_to_non_nullable
-              as double?,
-      discountStateGbp: freezed == discountStateGbp
-          ? _value.discountStateGbp
-          : discountStateGbp // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }
@@ -2592,6 +2618,8 @@ class _$PriceItemImpl implements _PriceItem {
   const _$PriceItemImpl(
       {required this.id,
       required this.name,
+      this.startPrice,
+      this.discountPrice,
       this.price,
       this.priceEu,
       this.startPriceEu,
@@ -2606,7 +2634,10 @@ class _$PriceItemImpl implements _PriceItem {
       this.discountPricePen,
       this.discountStatePen,
       this.priceAED,
-      this.priceGBP,
+      this.priceGbp,
+      this.startPriceGbp,
+      this.discountPriceGbp,
+      this.discountStateGbp,
       this.priceJPY,
       required this.category,
       required this.discountState,
@@ -2778,10 +2809,7 @@ class _$PriceItemImpl implements _PriceItem {
       this.discountStateChf,
       this.startPriceNok,
       this.discountPriceNok,
-      this.discountStateNok,
-      this.startPriceGbp,
-      this.discountPriceGbp,
-      this.discountStateGbp});
+      this.discountStateNok});
 
   factory _$PriceItemImpl.fromJson(Map<String, dynamic> json) =>
       _$$PriceItemImplFromJson(json);
@@ -2790,6 +2818,10 @@ class _$PriceItemImpl implements _PriceItem {
   final String id;
   @override
   final String name;
+  @override
+  final double? startPrice;
+  @override
+  final double? discountPrice;
   @override
   final double? price;
   @override
@@ -2819,7 +2851,13 @@ class _$PriceItemImpl implements _PriceItem {
   @override
   final double? priceAED;
   @override
-  final double? priceGBP;
+  final double? priceGbp;
+  @override
+  final double? startPriceGbp;
+  @override
+  final double? discountPriceGbp;
+  @override
+  final bool? discountStateGbp;
   @override
   final double? priceJPY;
   @override
@@ -3164,16 +3202,10 @@ class _$PriceItemImpl implements _PriceItem {
   final double? discountPriceNok;
   @override
   final bool? discountStateNok;
-  @override
-  final double? startPriceGbp;
-  @override
-  final double? discountPriceGbp;
-  @override
-  final bool? discountStateGbp;
 
   @override
   String toString() {
-    return 'PriceItem(id: $id, name: $name, price: $price, priceEu: $priceEu, startPriceEu: $startPriceEu, discountPriceEu: $discountPriceEu, discountStateEu: $discountStateEu, priceUsd: $priceUsd, startPriceUsd: $startPriceUsd, discountPriceUsd: $discountPriceUsd, discountStateUsd: $discountStateUsd, pricePen: $pricePen, startPricePen: $startPricePen, discountPricePen: $discountPricePen, discountStatePen: $discountStatePen, priceAED: $priceAED, priceGBP: $priceGBP, priceJPY: $priceJPY, category: $category, discountState: $discountState, updatedAt: $updatedAt, priceCl: $priceCl, priceAed: $priceAed, priceAll: $priceAll, priceAmd: $priceAmd, priceAoa: $priceAoa, priceAud: $priceAud, priceBam: $priceBam, priceBdt: $priceBdt, priceCzk: $priceCzk, priceDkk: $priceDkk, priceDzd: $priceDzd, priceEgp: $priceEgp, priceEtb: $priceEtb, priceGel: $priceGel, priceHkd: $priceHkd, priceHuf: $priceHuf, priceInr: $priceInr, priceKes: $priceKes, priceKgs: $priceKgs, priceKzt: $priceKzt, priceMad: $priceMad, priceMdl: $priceMdl, priceMxn: $priceMxn, priceMyr: $priceMyr, priceNgn: $priceNgn, priceNpr: $priceNpr, priceNzd: $priceNzd, pricePhp: $pricePhp, pricePkr: $pricePkr, pricePln: $pricePln, priceQar: $priceQar, priceRon: $priceRon, priceRsd: $priceRsd, priceSar: $priceSar, priceSek: $priceSek, priceSgd: $priceSgd, priceThb: $priceThb, priceTjs: $priceTjs, priceZar: $priceZar, priceUyu: $priceUyu, priceChf: $priceChf, priceNok: $priceNok, startPriceCl: $startPriceCl, discountPriceCl: $discountPriceCl, discountStateCl: $discountStateCl, startPriceAed: $startPriceAed, discountPriceAed: $discountPriceAed, discountStateAed: $discountStateAed, startPriceAll: $startPriceAll, discountPriceAll: $discountPriceAll, discountStateAll: $discountStateAll, startPriceAmd: $startPriceAmd, discountPriceAmd: $discountPriceAmd, discountStateAmd: $discountStateAmd, startPriceAoa: $startPriceAoa, discountPriceAoa: $discountPriceAoa, discountStateAoa: $discountStateAoa, startPriceAud: $startPriceAud, discountPriceAud: $discountPriceAud, discountStateAud: $discountStateAud, startPriceBam: $startPriceBam, discountPriceBam: $discountPriceBam, discountStateBam: $discountStateBam, startPriceBdt: $startPriceBdt, discountPriceBdt: $discountPriceBdt, discountStateBdt: $discountStateBdt, startPriceCzk: $startPriceCzk, discountPriceCzk: $discountPriceCzk, discountStateCzk: $discountStateCzk, startPriceDkk: $startPriceDkk, discountPriceDkk: $discountPriceDkk, discountStateDkk: $discountStateDkk, startPriceDzd: $startPriceDzd, discountPriceDzd: $discountPriceDzd, discountStateDzd: $discountStateDzd, startPriceEgp: $startPriceEgp, discountPriceEgp: $discountPriceEgp, discountStateEgp: $discountStateEgp, startPriceEtb: $startPriceEtb, discountPriceEtb: $discountPriceEtb, discountStateEtb: $discountStateEtb, startPriceGel: $startPriceGel, discountPriceGel: $discountPriceGel, discountStateGel: $discountStateGel, startPriceHkd: $startPriceHkd, discountPriceHkd: $discountPriceHkd, discountStateHkd: $discountStateHkd, startPriceHuf: $startPriceHuf, discountPriceHuf: $discountPriceHuf, discountStateHuf: $discountStateHuf, startPriceInr: $startPriceInr, discountPriceInr: $discountPriceInr, discountStateInr: $discountStateInr, startPriceKes: $startPriceKes, discountPriceKes: $discountPriceKes, discountStateKes: $discountStateKes, startPriceKgs: $startPriceKgs, discountPriceKgs: $discountPriceKgs, discountStateKgs: $discountStateKgs, startPriceKzt: $startPriceKzt, discountPriceKzt: $discountPriceKzt, discountStateKzt: $discountStateKzt, startPriceMad: $startPriceMad, discountPriceMad: $discountPriceMad, discountStateMad: $discountStateMad, startPriceMdl: $startPriceMdl, discountPriceMdl: $discountPriceMdl, discountStateMdl: $discountStateMdl, startPriceMxn: $startPriceMxn, discountPriceMxn: $discountPriceMxn, discountStateMxn: $discountStateMxn, startPriceMyr: $startPriceMyr, discountPriceMyr: $discountPriceMyr, discountStateMyr: $discountStateMyr, startPriceNgn: $startPriceNgn, discountPriceNgn: $discountPriceNgn, discountStateNgn: $discountStateNgn, startPriceNpr: $startPriceNpr, discountPriceNpr: $discountPriceNpr, discountStateNpr: $discountStateNpr, startPriceNzd: $startPriceNzd, discountPriceNzd: $discountPriceNzd, discountStateNzd: $discountStateNzd, startPricePhp: $startPricePhp, discountPricePhp: $discountPricePhp, discountStatePhp: $discountStatePhp, startPricePkr: $startPricePkr, discountPricePkr: $discountPricePkr, discountStatePkr: $discountStatePkr, startPricePln: $startPricePln, discountPricePln: $discountPricePln, discountStatePln: $discountStatePln, startPriceQar: $startPriceQar, discountPriceQar: $discountPriceQar, discountStateQar: $discountStateQar, startPriceRon: $startPriceRon, discountPriceRon: $discountPriceRon, discountStateRon: $discountStateRon, startPriceRsd: $startPriceRsd, discountPriceRsd: $discountPriceRsd, discountStateRsd: $discountStateRsd, startPriceSar: $startPriceSar, discountPriceSar: $discountPriceSar, discountStateSar: $discountStateSar, startPriceSek: $startPriceSek, discountPriceSek: $discountPriceSek, discountStateSek: $discountStateSek, startPriceSgd: $startPriceSgd, discountPriceSgd: $discountPriceSgd, discountStateSgd: $discountStateSgd, startPriceThb: $startPriceThb, discountPriceThb: $discountPriceThb, discountStateThb: $discountStateThb, startPriceTjs: $startPriceTjs, discountPriceTjs: $discountPriceTjs, discountStateTjs: $discountStateTjs, startPriceZar: $startPriceZar, discountPriceZar: $discountPriceZar, discountStateZar: $discountStateZar, startPriceUyu: $startPriceUyu, discountPriceUyu: $discountPriceUyu, discountStateUyu: $discountStateUyu, startPriceChf: $startPriceChf, discountPriceChf: $discountPriceChf, discountStateChf: $discountStateChf, startPriceNok: $startPriceNok, discountPriceNok: $discountPriceNok, discountStateNok: $discountStateNok, startPriceGbp: $startPriceGbp, discountPriceGbp: $discountPriceGbp, discountStateGbp: $discountStateGbp)';
+    return 'PriceItem(id: $id, name: $name, startPrice: $startPrice, discountPrice: $discountPrice, price: $price, priceEu: $priceEu, startPriceEu: $startPriceEu, discountPriceEu: $discountPriceEu, discountStateEu: $discountStateEu, priceUsd: $priceUsd, startPriceUsd: $startPriceUsd, discountPriceUsd: $discountPriceUsd, discountStateUsd: $discountStateUsd, pricePen: $pricePen, startPricePen: $startPricePen, discountPricePen: $discountPricePen, discountStatePen: $discountStatePen, priceAED: $priceAED, priceGbp: $priceGbp, startPriceGbp: $startPriceGbp, discountPriceGbp: $discountPriceGbp, discountStateGbp: $discountStateGbp, priceJPY: $priceJPY, category: $category, discountState: $discountState, updatedAt: $updatedAt, priceCl: $priceCl, priceAed: $priceAed, priceAll: $priceAll, priceAmd: $priceAmd, priceAoa: $priceAoa, priceAud: $priceAud, priceBam: $priceBam, priceBdt: $priceBdt, priceCzk: $priceCzk, priceDkk: $priceDkk, priceDzd: $priceDzd, priceEgp: $priceEgp, priceEtb: $priceEtb, priceGel: $priceGel, priceHkd: $priceHkd, priceHuf: $priceHuf, priceInr: $priceInr, priceKes: $priceKes, priceKgs: $priceKgs, priceKzt: $priceKzt, priceMad: $priceMad, priceMdl: $priceMdl, priceMxn: $priceMxn, priceMyr: $priceMyr, priceNgn: $priceNgn, priceNpr: $priceNpr, priceNzd: $priceNzd, pricePhp: $pricePhp, pricePkr: $pricePkr, pricePln: $pricePln, priceQar: $priceQar, priceRon: $priceRon, priceRsd: $priceRsd, priceSar: $priceSar, priceSek: $priceSek, priceSgd: $priceSgd, priceThb: $priceThb, priceTjs: $priceTjs, priceZar: $priceZar, priceUyu: $priceUyu, priceChf: $priceChf, priceNok: $priceNok, startPriceCl: $startPriceCl, discountPriceCl: $discountPriceCl, discountStateCl: $discountStateCl, startPriceAed: $startPriceAed, discountPriceAed: $discountPriceAed, discountStateAed: $discountStateAed, startPriceAll: $startPriceAll, discountPriceAll: $discountPriceAll, discountStateAll: $discountStateAll, startPriceAmd: $startPriceAmd, discountPriceAmd: $discountPriceAmd, discountStateAmd: $discountStateAmd, startPriceAoa: $startPriceAoa, discountPriceAoa: $discountPriceAoa, discountStateAoa: $discountStateAoa, startPriceAud: $startPriceAud, discountPriceAud: $discountPriceAud, discountStateAud: $discountStateAud, startPriceBam: $startPriceBam, discountPriceBam: $discountPriceBam, discountStateBam: $discountStateBam, startPriceBdt: $startPriceBdt, discountPriceBdt: $discountPriceBdt, discountStateBdt: $discountStateBdt, startPriceCzk: $startPriceCzk, discountPriceCzk: $discountPriceCzk, discountStateCzk: $discountStateCzk, startPriceDkk: $startPriceDkk, discountPriceDkk: $discountPriceDkk, discountStateDkk: $discountStateDkk, startPriceDzd: $startPriceDzd, discountPriceDzd: $discountPriceDzd, discountStateDzd: $discountStateDzd, startPriceEgp: $startPriceEgp, discountPriceEgp: $discountPriceEgp, discountStateEgp: $discountStateEgp, startPriceEtb: $startPriceEtb, discountPriceEtb: $discountPriceEtb, discountStateEtb: $discountStateEtb, startPriceGel: $startPriceGel, discountPriceGel: $discountPriceGel, discountStateGel: $discountStateGel, startPriceHkd: $startPriceHkd, discountPriceHkd: $discountPriceHkd, discountStateHkd: $discountStateHkd, startPriceHuf: $startPriceHuf, discountPriceHuf: $discountPriceHuf, discountStateHuf: $discountStateHuf, startPriceInr: $startPriceInr, discountPriceInr: $discountPriceInr, discountStateInr: $discountStateInr, startPriceKes: $startPriceKes, discountPriceKes: $discountPriceKes, discountStateKes: $discountStateKes, startPriceKgs: $startPriceKgs, discountPriceKgs: $discountPriceKgs, discountStateKgs: $discountStateKgs, startPriceKzt: $startPriceKzt, discountPriceKzt: $discountPriceKzt, discountStateKzt: $discountStateKzt, startPriceMad: $startPriceMad, discountPriceMad: $discountPriceMad, discountStateMad: $discountStateMad, startPriceMdl: $startPriceMdl, discountPriceMdl: $discountPriceMdl, discountStateMdl: $discountStateMdl, startPriceMxn: $startPriceMxn, discountPriceMxn: $discountPriceMxn, discountStateMxn: $discountStateMxn, startPriceMyr: $startPriceMyr, discountPriceMyr: $discountPriceMyr, discountStateMyr: $discountStateMyr, startPriceNgn: $startPriceNgn, discountPriceNgn: $discountPriceNgn, discountStateNgn: $discountStateNgn, startPriceNpr: $startPriceNpr, discountPriceNpr: $discountPriceNpr, discountStateNpr: $discountStateNpr, startPriceNzd: $startPriceNzd, discountPriceNzd: $discountPriceNzd, discountStateNzd: $discountStateNzd, startPricePhp: $startPricePhp, discountPricePhp: $discountPricePhp, discountStatePhp: $discountStatePhp, startPricePkr: $startPricePkr, discountPricePkr: $discountPricePkr, discountStatePkr: $discountStatePkr, startPricePln: $startPricePln, discountPricePln: $discountPricePln, discountStatePln: $discountStatePln, startPriceQar: $startPriceQar, discountPriceQar: $discountPriceQar, discountStateQar: $discountStateQar, startPriceRon: $startPriceRon, discountPriceRon: $discountPriceRon, discountStateRon: $discountStateRon, startPriceRsd: $startPriceRsd, discountPriceRsd: $discountPriceRsd, discountStateRsd: $discountStateRsd, startPriceSar: $startPriceSar, discountPriceSar: $discountPriceSar, discountStateSar: $discountStateSar, startPriceSek: $startPriceSek, discountPriceSek: $discountPriceSek, discountStateSek: $discountStateSek, startPriceSgd: $startPriceSgd, discountPriceSgd: $discountPriceSgd, discountStateSgd: $discountStateSgd, startPriceThb: $startPriceThb, discountPriceThb: $discountPriceThb, discountStateThb: $discountStateThb, startPriceTjs: $startPriceTjs, discountPriceTjs: $discountPriceTjs, discountStateTjs: $discountStateTjs, startPriceZar: $startPriceZar, discountPriceZar: $discountPriceZar, discountStateZar: $discountStateZar, startPriceUyu: $startPriceUyu, discountPriceUyu: $discountPriceUyu, discountStateUyu: $discountStateUyu, startPriceChf: $startPriceChf, discountPriceChf: $discountPriceChf, discountStateChf: $discountStateChf, startPriceNok: $startPriceNok, discountPriceNok: $discountPriceNok, discountStateNok: $discountStateNok)';
   }
 
   @override
@@ -3183,6 +3215,10 @@ class _$PriceItemImpl implements _PriceItem {
             other is _$PriceItemImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.startPrice, startPrice) ||
+                other.startPrice == startPrice) &&
+            (identical(other.discountPrice, discountPrice) ||
+                other.discountPrice == discountPrice) &&
             (identical(other.price, price) || other.price == price) &&
             (identical(other.priceEu, priceEu) || other.priceEu == priceEu) &&
             (identical(other.startPriceEu, startPriceEu) ||
@@ -3209,8 +3245,14 @@ class _$PriceItemImpl implements _PriceItem {
                 other.discountStatePen == discountStatePen) &&
             (identical(other.priceAED, priceAED) ||
                 other.priceAED == priceAED) &&
-            (identical(other.priceGBP, priceGBP) ||
-                other.priceGBP == priceGBP) &&
+            (identical(other.priceGbp, priceGbp) ||
+                other.priceGbp == priceGbp) &&
+            (identical(other.startPriceGbp, startPriceGbp) ||
+                other.startPriceGbp == startPriceGbp) &&
+            (identical(other.discountPriceGbp, discountPriceGbp) ||
+                other.discountPriceGbp == discountPriceGbp) &&
+            (identical(other.discountStateGbp, discountStateGbp) ||
+                other.discountStateGbp == discountStateGbp) &&
             (identical(other.priceJPY, priceJPY) ||
                 other.priceJPY == priceJPY) &&
             (identical(other.category, category) ||
@@ -3262,16 +3304,11 @@ class _$PriceItemImpl implements _PriceItem {
                 other.priceMad == priceMad) &&
             (identical(other.priceMdl, priceMdl) ||
                 other.priceMdl == priceMdl) &&
-            (identical(other.priceMxn, priceMxn) ||
-                other.priceMxn == priceMxn) &&
-            (identical(other.priceMyr, priceMyr) ||
-                other.priceMyr == priceMyr) &&
-            (identical(other.priceNgn, priceNgn) ||
-                other.priceNgn == priceNgn) &&
-            (identical(other.priceNpr, priceNpr) ||
-                other.priceNpr == priceNpr) &&
-            (identical(other.priceNzd, priceNzd) ||
-                other.priceNzd == priceNzd) &&
+            (identical(other.priceMxn, priceMxn) || other.priceMxn == priceMxn) &&
+            (identical(other.priceMyr, priceMyr) || other.priceMyr == priceMyr) &&
+            (identical(other.priceNgn, priceNgn) || other.priceNgn == priceNgn) &&
+            (identical(other.priceNpr, priceNpr) || other.priceNpr == priceNpr) &&
+            (identical(other.priceNzd, priceNzd) || other.priceNzd == priceNzd) &&
             (identical(other.pricePhp, pricePhp) || other.pricePhp == pricePhp) &&
             (identical(other.pricePkr, pricePkr) || other.pricePkr == pricePkr) &&
             (identical(other.pricePln, pricePln) || other.pricePln == pricePln) &&
@@ -3412,10 +3449,7 @@ class _$PriceItemImpl implements _PriceItem {
             (identical(other.discountStateChf, discountStateChf) || other.discountStateChf == discountStateChf) &&
             (identical(other.startPriceNok, startPriceNok) || other.startPriceNok == startPriceNok) &&
             (identical(other.discountPriceNok, discountPriceNok) || other.discountPriceNok == discountPriceNok) &&
-            (identical(other.discountStateNok, discountStateNok) || other.discountStateNok == discountStateNok) &&
-            (identical(other.startPriceGbp, startPriceGbp) || other.startPriceGbp == startPriceGbp) &&
-            (identical(other.discountPriceGbp, discountPriceGbp) || other.discountPriceGbp == discountPriceGbp) &&
-            (identical(other.discountStateGbp, discountStateGbp) || other.discountStateGbp == discountStateGbp));
+            (identical(other.discountStateNok, discountStateNok) || other.discountStateNok == discountStateNok));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -3424,6 +3458,8 @@ class _$PriceItemImpl implements _PriceItem {
         runtimeType,
         id,
         name,
+        startPrice,
+        discountPrice,
         price,
         priceEu,
         startPriceEu,
@@ -3438,7 +3474,10 @@ class _$PriceItemImpl implements _PriceItem {
         discountPricePen,
         discountStatePen,
         priceAED,
-        priceGBP,
+        priceGbp,
+        startPriceGbp,
+        discountPriceGbp,
+        discountStateGbp,
         priceJPY,
         category,
         discountState,
@@ -3610,10 +3649,7 @@ class _$PriceItemImpl implements _PriceItem {
         discountStateChf,
         startPriceNok,
         discountPriceNok,
-        discountStateNok,
-        startPriceGbp,
-        discountPriceGbp,
-        discountStateGbp
+        discountStateNok
       ]);
 
   /// Create a copy of PriceItem
@@ -3636,6 +3672,8 @@ abstract class _PriceItem implements PriceItem {
   const factory _PriceItem(
       {required final String id,
       required final String name,
+      final double? startPrice,
+      final double? discountPrice,
       final double? price,
       final double? priceEu,
       final double? startPriceEu,
@@ -3650,7 +3688,10 @@ abstract class _PriceItem implements PriceItem {
       final double? discountPricePen,
       final bool? discountStatePen,
       final double? priceAED,
-      final double? priceGBP,
+      final double? priceGbp,
+      final double? startPriceGbp,
+      final double? discountPriceGbp,
+      final bool? discountStateGbp,
       final double? priceJPY,
       required final String category,
       required final bool discountState,
@@ -3822,10 +3863,7 @@ abstract class _PriceItem implements PriceItem {
       final bool? discountStateChf,
       final double? startPriceNok,
       final double? discountPriceNok,
-      final bool? discountStateNok,
-      final double? startPriceGbp,
-      final double? discountPriceGbp,
-      final bool? discountStateGbp}) = _$PriceItemImpl;
+      final bool? discountStateNok}) = _$PriceItemImpl;
 
   factory _PriceItem.fromJson(Map<String, dynamic> json) =
       _$PriceItemImpl.fromJson;
@@ -3834,6 +3872,10 @@ abstract class _PriceItem implements PriceItem {
   String get id;
   @override
   String get name;
+  @override
+  double? get startPrice;
+  @override
+  double? get discountPrice;
   @override
   double? get price;
   @override
@@ -3863,7 +3905,13 @@ abstract class _PriceItem implements PriceItem {
   @override
   double? get priceAED;
   @override
-  double? get priceGBP;
+  double? get priceGbp;
+  @override
+  double? get startPriceGbp;
+  @override
+  double? get discountPriceGbp;
+  @override
+  bool? get discountStateGbp;
   @override
   double? get priceJPY;
   @override
@@ -4208,12 +4256,6 @@ abstract class _PriceItem implements PriceItem {
   double? get discountPriceNok;
   @override
   bool? get discountStateNok;
-  @override
-  double? get startPriceGbp;
-  @override
-  double? get discountPriceGbp;
-  @override
-  bool? get discountStateGbp;
 
   /// Create a copy of PriceItem
   /// with the given fields replaced by the non-null parameter values.

@@ -8,6 +8,8 @@ class PriceItem with _$PriceItem {
   const factory PriceItem({
     required String id,
     required String name,
+    double? startPrice,
+    double? discountPrice,
     double? price,
     double? priceEu,
     double? startPriceEu,
@@ -22,7 +24,10 @@ class PriceItem with _$PriceItem {
     double? discountPricePen,
     bool? discountStatePen,
     double? priceAED,
-    double? priceGBP,
+    double? priceGbp,
+    double? startPriceGbp,
+    double? discountPriceGbp,
+    bool? discountStateGbp,
     double? priceJPY,
     required String category,
     required bool discountState,
@@ -195,9 +200,6 @@ class PriceItem with _$PriceItem {
     double? startPriceNok,
     double? discountPriceNok,
     bool? discountStateNok,
-    double? startPriceGbp,
-    double? discountPriceGbp,
-    bool? discountStateGbp,
   }) = _PriceItem;
 
   factory PriceItem.fromJson(Map<String, dynamic> json) =>
