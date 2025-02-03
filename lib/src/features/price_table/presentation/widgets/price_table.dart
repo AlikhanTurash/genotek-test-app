@@ -8,52 +8,87 @@ class PriceDataTable extends ConsumerWidget {
 
   const PriceDataTable({required this.prices});
 
-  String getFormattedPrice(PriceItem item, Currency currency) {
+  bool getDiscountStateForCurrency(PriceItem item, Currency currency) {
+    bool discountState;
     switch (currency) {
       case Currency.EUR:
-        if (!item.discountState) {
-          return item.priceEu != null
-              ? '€${item.priceEu!.toStringAsFixed(2)}'
-              : 'N/A';
-        }
-        return item.startPriceEu != null
-            ? '€${item.startPriceEu!.toStringAsFixed(2)}'
-            : 'N/A';
+        discountState = item.discountStateEu ?? false;
+        print('Item: ${item.name}, EUR Discount State: $discountState');
+        print('Raw discountStateEu value: ${item.discountStateEu}');
+        return discountState;
       case Currency.USD:
-        if (!item.discountState) {
-          return item.priceUsd != null
-              ? '\$${item.priceUsd!.toStringAsFixed(2)}'
-              : 'N/A';
-        }
-        return item.startPriceUsd != null
-            ? '\$${item.startPriceUsd!.toStringAsFixed(2)}'
-            : 'N/A';
+        discountState = item.discountStateUsd ?? false;
+        print('Item: ${item.name}, USD Discount State: $discountState');
+        print('Raw discountStateUsd value: ${item.discountStateUsd}');
+        return discountState;
       case Currency.PEN:
-        if (!item.discountState) {
-          return item.pricePen != null
-              ? 'S/${item.pricePen!.toStringAsFixed(2)}'
-              : 'N/A';
-        }
-        return item.startPricePen != null
+        discountState = item.discountStatePen ?? false;
+        print('Item: ${item.name}, PEN Discount State: $discountState');
+        print('Raw discountStatePen value: ${item.discountStatePen}');
+        return discountState;
+    }
+  }
+
+  String getRegularPrice(PriceItem item, Currency currency) {
+    String price;
+    switch (currency) {
+      case Currency.EUR:
+        price = item.startPriceEu != null
+            ? '€${item.startPriceEu!.toStringAsFixed(2)}'
+            : (item.priceEu != null
+                ? '€${item.priceEu!.toStringAsFixed(2)}'
+                : 'N/A');
+        print('Item: ${item.name}, EUR Regular Price: $price');
+        print(
+            'Raw startPriceEu: ${item.startPriceEu}, priceEu: ${item.priceEu}');
+        return price;
+      case Currency.USD:
+        price = item.startPriceUsd != null
+            ? '\$${item.startPriceUsd!.toStringAsFixed(2)}'
+            : (item.priceUsd != null
+                ? '\$${item.priceUsd!.toStringAsFixed(2)}'
+                : 'N/A');
+        print('Item: ${item.name}, USD Regular Price: $price');
+        print(
+            'Raw startPriceUsd: ${item.startPriceUsd}, priceUsd: ${item.priceUsd}');
+        return price;
+      case Currency.PEN:
+        price = item.startPricePen != null
             ? 'S/${item.startPricePen!.toStringAsFixed(2)}'
-            : 'N/A';
+            : (item.pricePen != null
+                ? 'S/${item.pricePen!.toStringAsFixed(2)}'
+                : 'N/A');
+        print('Item: ${item.name}, PEN Regular Price: $price');
+        print(
+            'Raw startPricePen: ${item.startPricePen}, pricePen: ${item.pricePen}');
+        return price;
     }
   }
 
   String getDiscountPrice(PriceItem item, Currency currency) {
+    String price;
     switch (currency) {
       case Currency.EUR:
-        return item.discountPriceEu != null
+        price = item.discountPriceEu != null
             ? '€${item.discountPriceEu!.toStringAsFixed(2)}'
             : 'N/A';
+        print('Item: ${item.name}, EUR Discount Price: $price');
+        print('Raw discountPriceEu: ${item.discountPriceEu}');
+        return price;
       case Currency.USD:
-        return item.discountPriceUsd != null
+        price = item.discountPriceUsd != null
             ? '\$${item.discountPriceUsd!.toStringAsFixed(2)}'
             : 'N/A';
+        print('Item: ${item.name}, USD Discount Price: $price');
+        print('Raw discountPriceUsd: ${item.discountPriceUsd}');
+        return price;
       case Currency.PEN:
-        return item.discountPricePen != null
+        price = item.discountPricePen != null
             ? 'S/${item.discountPricePen!.toStringAsFixed(2)}'
             : 'N/A';
+        print('Item: ${item.name}, PEN Discount Price: $price');
+        print('Raw discountPricePen: ${item.discountPricePen}');
+        return price;
     }
   }
 
@@ -61,72 +96,48 @@ class PriceDataTable extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final selectedCurrency = ref.watch(selectedCurrencyProvider);
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              minWidth: constraints.maxWidth,
-            ),
-            child: DataTable(
-              columnSpacing: 20,
-              horizontalMargin: 16,
-              columns: [
-                const DataColumn(
-                  label: Text('Name'),
-                  // flex: 2,
-                ),
-                DataColumn(
-                  label: Text('Price (${selectedCurrency.name})'),
-                  numeric: true,
-                  // flex: 2,
-                ),
-                const DataColumn(
-                  label: Text('Category'),
-                  // flex: 2,
-                ),
-              ],
-              rows: prices
-                  .map((item) => DataRow(
-                        cells: [
-                          DataCell(Text(item.name)),
-                          DataCell(
-                            item.discountState
-                                ? Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Text(
-                                        getFormattedPrice(
-                                            item, selectedCurrency),
-                                        style: const TextStyle(
-                                          decoration:
-                                              TextDecoration.lineThrough,
-                                          color: Colors.grey,
-                                        ),
-                                      ),
-                                      const SizedBox(width: 8),
-                                      Text(
-                                        getDiscountPrice(
-                                            item, selectedCurrency),
-                                        style: const TextStyle(
-                                          color: Colors.green,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                : Text(
-                                    getFormattedPrice(item, selectedCurrency)),
-                          ),
-                          DataCell(Text(item.category)),
-                        ],
-                      ))
-                  .toList(),
-            ),
-          ),
-        );
-      },
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: DataTable(
+        columns: [
+          const DataColumn(label: Text('Name')),
+          DataColumn(
+              label: Text('Price (${selectedCurrency.name})'), numeric: true),
+          const DataColumn(label: Text('Category')),
+        ],
+        rows: prices
+            .map((item) => DataRow(
+                  cells: [
+                    DataCell(Text(item.name)),
+                    DataCell(
+                      getDiscountStateForCurrency(item, selectedCurrency)
+                          ? Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  getRegularPrice(item, selectedCurrency),
+                                  style: const TextStyle(
+                                    decoration: TextDecoration.lineThrough,
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                                const SizedBox(width: 8),
+                                Text(
+                                  getDiscountPrice(item, selectedCurrency),
+                                  style: const TextStyle(
+                                    color: Colors.green,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            )
+                          : Text(getRegularPrice(item, selectedCurrency)),
+                    ),
+                    DataCell(Text(item.category)),
+                  ],
+                ))
+            .toList(),
+      ),
     );
   }
 }

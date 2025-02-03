@@ -26,12 +26,15 @@ mixin _$PriceItem {
   double? get priceEu => throw _privateConstructorUsedError;
   double? get startPriceEu => throw _privateConstructorUsedError;
   double? get discountPriceEu => throw _privateConstructorUsedError;
+  bool? get discountStateEu => throw _privateConstructorUsedError;
   double? get priceUsd => throw _privateConstructorUsedError;
   double? get startPriceUsd => throw _privateConstructorUsedError;
   double? get discountPriceUsd => throw _privateConstructorUsedError;
+  bool? get discountStateUsd => throw _privateConstructorUsedError;
   double? get pricePen => throw _privateConstructorUsedError;
   double? get startPricePen => throw _privateConstructorUsedError;
   double? get discountPricePen => throw _privateConstructorUsedError;
+  bool? get discountStatePen => throw _privateConstructorUsedError;
   double? get priceAED => throw _privateConstructorUsedError;
   double? get priceGBP => throw _privateConstructorUsedError;
   double? get priceJPY => throw _privateConstructorUsedError;
@@ -61,12 +64,15 @@ abstract class $PriceItemCopyWith<$Res> {
       double? priceEu,
       double? startPriceEu,
       double? discountPriceEu,
+      bool? discountStateEu,
       double? priceUsd,
       double? startPriceUsd,
       double? discountPriceUsd,
+      bool? discountStateUsd,
       double? pricePen,
       double? startPricePen,
       double? discountPricePen,
+      bool? discountStatePen,
       double? priceAED,
       double? priceGBP,
       double? priceJPY,
@@ -96,12 +102,15 @@ class _$PriceItemCopyWithImpl<$Res, $Val extends PriceItem>
     Object? priceEu = freezed,
     Object? startPriceEu = freezed,
     Object? discountPriceEu = freezed,
+    Object? discountStateEu = freezed,
     Object? priceUsd = freezed,
     Object? startPriceUsd = freezed,
     Object? discountPriceUsd = freezed,
+    Object? discountStateUsd = freezed,
     Object? pricePen = freezed,
     Object? startPricePen = freezed,
     Object? discountPricePen = freezed,
+    Object? discountStatePen = freezed,
     Object? priceAED = freezed,
     Object? priceGBP = freezed,
     Object? priceJPY = freezed,
@@ -134,6 +143,10 @@ class _$PriceItemCopyWithImpl<$Res, $Val extends PriceItem>
           ? _value.discountPriceEu
           : discountPriceEu // ignore: cast_nullable_to_non_nullable
               as double?,
+      discountStateEu: freezed == discountStateEu
+          ? _value.discountStateEu
+          : discountStateEu // ignore: cast_nullable_to_non_nullable
+              as bool?,
       priceUsd: freezed == priceUsd
           ? _value.priceUsd
           : priceUsd // ignore: cast_nullable_to_non_nullable
@@ -146,6 +159,10 @@ class _$PriceItemCopyWithImpl<$Res, $Val extends PriceItem>
           ? _value.discountPriceUsd
           : discountPriceUsd // ignore: cast_nullable_to_non_nullable
               as double?,
+      discountStateUsd: freezed == discountStateUsd
+          ? _value.discountStateUsd
+          : discountStateUsd // ignore: cast_nullable_to_non_nullable
+              as bool?,
       pricePen: freezed == pricePen
           ? _value.pricePen
           : pricePen // ignore: cast_nullable_to_non_nullable
@@ -158,6 +175,10 @@ class _$PriceItemCopyWithImpl<$Res, $Val extends PriceItem>
           ? _value.discountPricePen
           : discountPricePen // ignore: cast_nullable_to_non_nullable
               as double?,
+      discountStatePen: freezed == discountStatePen
+          ? _value.discountStatePen
+          : discountStatePen // ignore: cast_nullable_to_non_nullable
+              as bool?,
       priceAED: freezed == priceAED
           ? _value.priceAED
           : priceAED // ignore: cast_nullable_to_non_nullable
@@ -201,12 +222,15 @@ abstract class _$$PriceItemImplCopyWith<$Res>
       double? priceEu,
       double? startPriceEu,
       double? discountPriceEu,
+      bool? discountStateEu,
       double? priceUsd,
       double? startPriceUsd,
       double? discountPriceUsd,
+      bool? discountStateUsd,
       double? pricePen,
       double? startPricePen,
       double? discountPricePen,
+      bool? discountStatePen,
       double? priceAED,
       double? priceGBP,
       double? priceJPY,
@@ -234,12 +258,15 @@ class __$$PriceItemImplCopyWithImpl<$Res>
     Object? priceEu = freezed,
     Object? startPriceEu = freezed,
     Object? discountPriceEu = freezed,
+    Object? discountStateEu = freezed,
     Object? priceUsd = freezed,
     Object? startPriceUsd = freezed,
     Object? discountPriceUsd = freezed,
+    Object? discountStateUsd = freezed,
     Object? pricePen = freezed,
     Object? startPricePen = freezed,
     Object? discountPricePen = freezed,
+    Object? discountStatePen = freezed,
     Object? priceAED = freezed,
     Object? priceGBP = freezed,
     Object? priceJPY = freezed,
@@ -272,6 +299,10 @@ class __$$PriceItemImplCopyWithImpl<$Res>
           ? _value.discountPriceEu
           : discountPriceEu // ignore: cast_nullable_to_non_nullable
               as double?,
+      discountStateEu: freezed == discountStateEu
+          ? _value.discountStateEu
+          : discountStateEu // ignore: cast_nullable_to_non_nullable
+              as bool?,
       priceUsd: freezed == priceUsd
           ? _value.priceUsd
           : priceUsd // ignore: cast_nullable_to_non_nullable
@@ -284,6 +315,10 @@ class __$$PriceItemImplCopyWithImpl<$Res>
           ? _value.discountPriceUsd
           : discountPriceUsd // ignore: cast_nullable_to_non_nullable
               as double?,
+      discountStateUsd: freezed == discountStateUsd
+          ? _value.discountStateUsd
+          : discountStateUsd // ignore: cast_nullable_to_non_nullable
+              as bool?,
       pricePen: freezed == pricePen
           ? _value.pricePen
           : pricePen // ignore: cast_nullable_to_non_nullable
@@ -296,6 +331,10 @@ class __$$PriceItemImplCopyWithImpl<$Res>
           ? _value.discountPricePen
           : discountPricePen // ignore: cast_nullable_to_non_nullable
               as double?,
+      discountStatePen: freezed == discountStatePen
+          ? _value.discountStatePen
+          : discountStatePen // ignore: cast_nullable_to_non_nullable
+              as bool?,
       priceAED: freezed == priceAED
           ? _value.priceAED
           : priceAED // ignore: cast_nullable_to_non_nullable
@@ -334,12 +373,15 @@ class _$PriceItemImpl implements _PriceItem {
       this.priceEu,
       this.startPriceEu,
       this.discountPriceEu,
+      this.discountStateEu,
       this.priceUsd,
       this.startPriceUsd,
       this.discountPriceUsd,
+      this.discountStateUsd,
       this.pricePen,
       this.startPricePen,
       this.discountPricePen,
+      this.discountStatePen,
       this.priceAED,
       this.priceGBP,
       this.priceJPY,
@@ -363,17 +405,23 @@ class _$PriceItemImpl implements _PriceItem {
   @override
   final double? discountPriceEu;
   @override
+  final bool? discountStateEu;
+  @override
   final double? priceUsd;
   @override
   final double? startPriceUsd;
   @override
   final double? discountPriceUsd;
   @override
+  final bool? discountStateUsd;
+  @override
   final double? pricePen;
   @override
   final double? startPricePen;
   @override
   final double? discountPricePen;
+  @override
+  final bool? discountStatePen;
   @override
   final double? priceAED;
   @override
@@ -389,7 +437,7 @@ class _$PriceItemImpl implements _PriceItem {
 
   @override
   String toString() {
-    return 'PriceItem(id: $id, name: $name, price: $price, priceEu: $priceEu, startPriceEu: $startPriceEu, discountPriceEu: $discountPriceEu, priceUsd: $priceUsd, startPriceUsd: $startPriceUsd, discountPriceUsd: $discountPriceUsd, pricePen: $pricePen, startPricePen: $startPricePen, discountPricePen: $discountPricePen, priceAED: $priceAED, priceGBP: $priceGBP, priceJPY: $priceJPY, category: $category, discountState: $discountState, updatedAt: $updatedAt)';
+    return 'PriceItem(id: $id, name: $name, price: $price, priceEu: $priceEu, startPriceEu: $startPriceEu, discountPriceEu: $discountPriceEu, discountStateEu: $discountStateEu, priceUsd: $priceUsd, startPriceUsd: $startPriceUsd, discountPriceUsd: $discountPriceUsd, discountStateUsd: $discountStateUsd, pricePen: $pricePen, startPricePen: $startPricePen, discountPricePen: $discountPricePen, discountStatePen: $discountStatePen, priceAED: $priceAED, priceGBP: $priceGBP, priceJPY: $priceJPY, category: $category, discountState: $discountState, updatedAt: $updatedAt)';
   }
 
   @override
@@ -405,18 +453,24 @@ class _$PriceItemImpl implements _PriceItem {
                 other.startPriceEu == startPriceEu) &&
             (identical(other.discountPriceEu, discountPriceEu) ||
                 other.discountPriceEu == discountPriceEu) &&
+            (identical(other.discountStateEu, discountStateEu) ||
+                other.discountStateEu == discountStateEu) &&
             (identical(other.priceUsd, priceUsd) ||
                 other.priceUsd == priceUsd) &&
             (identical(other.startPriceUsd, startPriceUsd) ||
                 other.startPriceUsd == startPriceUsd) &&
             (identical(other.discountPriceUsd, discountPriceUsd) ||
                 other.discountPriceUsd == discountPriceUsd) &&
+            (identical(other.discountStateUsd, discountStateUsd) ||
+                other.discountStateUsd == discountStateUsd) &&
             (identical(other.pricePen, pricePen) ||
                 other.pricePen == pricePen) &&
             (identical(other.startPricePen, startPricePen) ||
                 other.startPricePen == startPricePen) &&
             (identical(other.discountPricePen, discountPricePen) ||
                 other.discountPricePen == discountPricePen) &&
+            (identical(other.discountStatePen, discountStatePen) ||
+                other.discountStatePen == discountStatePen) &&
             (identical(other.priceAED, priceAED) ||
                 other.priceAED == priceAED) &&
             (identical(other.priceGBP, priceGBP) ||
@@ -433,26 +487,30 @@ class _$PriceItemImpl implements _PriceItem {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      price,
-      priceEu,
-      startPriceEu,
-      discountPriceEu,
-      priceUsd,
-      startPriceUsd,
-      discountPriceUsd,
-      pricePen,
-      startPricePen,
-      discountPricePen,
-      priceAED,
-      priceGBP,
-      priceJPY,
-      category,
-      discountState,
-      updatedAt);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        name,
+        price,
+        priceEu,
+        startPriceEu,
+        discountPriceEu,
+        discountStateEu,
+        priceUsd,
+        startPriceUsd,
+        discountPriceUsd,
+        discountStateUsd,
+        pricePen,
+        startPricePen,
+        discountPricePen,
+        discountStatePen,
+        priceAED,
+        priceGBP,
+        priceJPY,
+        category,
+        discountState,
+        updatedAt
+      ]);
 
   /// Create a copy of PriceItem
   /// with the given fields replaced by the non-null parameter values.
@@ -478,12 +536,15 @@ abstract class _PriceItem implements PriceItem {
       final double? priceEu,
       final double? startPriceEu,
       final double? discountPriceEu,
+      final bool? discountStateEu,
       final double? priceUsd,
       final double? startPriceUsd,
       final double? discountPriceUsd,
+      final bool? discountStateUsd,
       final double? pricePen,
       final double? startPricePen,
       final double? discountPricePen,
+      final bool? discountStatePen,
       final double? priceAED,
       final double? priceGBP,
       final double? priceJPY,
@@ -507,17 +568,23 @@ abstract class _PriceItem implements PriceItem {
   @override
   double? get discountPriceEu;
   @override
+  bool? get discountStateEu;
+  @override
   double? get priceUsd;
   @override
   double? get startPriceUsd;
   @override
   double? get discountPriceUsd;
   @override
+  bool? get discountStateUsd;
+  @override
   double? get pricePen;
   @override
   double? get startPricePen;
   @override
   double? get discountPricePen;
+  @override
+  bool? get discountStatePen;
   @override
   double? get priceAED;
   @override
