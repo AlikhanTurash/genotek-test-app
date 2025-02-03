@@ -63,7 +63,10 @@ class _PriceScreenState extends ConsumerState<PriceScreen>
             PriceDataTable(prices: tables['diagnostics'] ?? []),
           ],
         ),
-        error: (error, _) => _ErrorView(error: error),
+        error: (error, stack) => _ErrorView(
+          error: error,
+          onRetry: () => ref.invalidate(priceRepositoryProvider),
+        ),
         loading: () => const Center(child: CircularProgressIndicator()),
       ),
     );
@@ -130,22 +133,36 @@ class _PriceScreenState extends ConsumerState<PriceScreen>
 
 class _ErrorView extends ConsumerWidget {
   final Object error;
+  final VoidCallback onRetry;
 
-  const _ErrorView({required this.error});
+  const _ErrorView({required this.error, required this.onRetry});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final errorMessage =
+        error.toString().replaceAll('PriceRepositoryException: ', '');
+
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(Icons.error_outline, size: 48),
+          const Icon(Icons.wifi_off, size: 48, color: Colors.red),
           const SizedBox(height: 16),
-          Text('Error loading data: ${error.toString()}'),
-          const SizedBox(height: 16),
-          ElevatedButton(
-            onPressed: () => ref.refresh(priceRepositoryProvider),
-            child: const Text('Retry'),
+          Text(
+            'Connection Error:',
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          const SizedBox(height: 8),
+          Text(
+            errorMessage,
+            textAlign: TextAlign.center,
+            style: const TextStyle(color: Colors.grey),
+          ),
+          const SizedBox(height: 24),
+          ElevatedButton.icon(
+            icon: const Icon(Icons.refresh),
+            label: const Text('Try Again'),
+            onPressed: onRetry,
           ),
         ],
       ),

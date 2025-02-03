@@ -11,58 +11,77 @@ class PriceDataTable extends ConsumerWidget {
 
   bool getDiscountStateForCurrency(PriceItem item, Currency currency) {
     switch (currency) {
-      case Currency.EUR:
+      case Currency.eur:
         return item.discountStateEu ?? false;
-      case Currency.USD:
+      case Currency.usd:
         return item.discountStateUsd ?? false;
-      case Currency.PEN:
+      case Currency.pen:
         return item.discountStatePen ?? false;
+      case Currency.clp:
+        return item.discountStateCl ?? false;
+      case Currency.aed:
+        return item.discountStateAed ?? false;
+      case Currency.all:
+        return item.discountStateAll ?? false;
+      // Add cases for all other currencies
       default:
-        return false; // Default behavior for other currencies
+        return false;
     }
   }
 
   String getRegularPrice(PriceItem item, Currency currency) {
     switch (currency) {
-      case Currency.EUR:
+      case Currency.eur:
         return item.startPriceEu != null
             ? '€${item.startPriceEu!.toStringAsFixed(2)}'
             : (item.priceEu != null
                 ? '€${item.priceEu!.toStringAsFixed(2)}'
                 : 'N/A');
-      case Currency.USD:
+      case Currency.usd:
         return item.startPriceUsd != null
             ? '\$${item.startPriceUsd!.toStringAsFixed(2)}'
             : (item.priceUsd != null
                 ? '\$${item.priceUsd!.toStringAsFixed(2)}'
                 : 'N/A');
-      case Currency.PEN:
-        return item.startPricePen != null
-            ? 'S/${item.startPricePen!.toStringAsFixed(2)}'
-            : (item.pricePen != null
-                ? 'S/${item.pricePen!.toStringAsFixed(2)}'
+      case Currency.clp:
+        return item.startPriceCl != null
+            ? 'CL\$${item.startPriceCl!.toStringAsFixed(2)}'
+            : (item.priceCl != null
+                ? 'CL\$${item.priceCl!.toStringAsFixed(2)}'
                 : 'N/A');
+      case Currency.all:
+        return item.startPriceAll != null
+            ? 'L${item.startPriceAll!.toStringAsFixed(2)}'
+            : (item.priceAll != null
+                ? 'L${item.priceAll!.toStringAsFixed(2)}'
+                : 'N/A');
+      // Add cases for all other currencies following the same pattern
       default:
-        return 'N/A'; // Default behavior for other currencies
+        return 'N/A';
     }
   }
 
   String getDiscountPrice(PriceItem item, Currency currency) {
     switch (currency) {
-      case Currency.EUR:
+      case Currency.eur:
         return item.discountPriceEu != null
             ? '€${item.discountPriceEu!.toStringAsFixed(2)}'
             : 'N/A';
-      case Currency.USD:
+      case Currency.usd:
         return item.discountPriceUsd != null
             ? '\$${item.discountPriceUsd!.toStringAsFixed(2)}'
             : 'N/A';
-      case Currency.PEN:
-        return item.discountPricePen != null
-            ? 'S/${item.discountPricePen!.toStringAsFixed(2)}'
+      case Currency.clp:
+        return item.discountPriceCl != null
+            ? 'CL\$${item.discountPriceCl!.toStringAsFixed(2)}'
             : 'N/A';
+      case Currency.all:
+        return item.discountPriceAll != null
+            ? 'L${item.discountPriceAll!.toStringAsFixed(2)}'
+            : 'N/A';
+      // Add cases for all other currencies following the same pattern
       default:
-        return 'N/A'; // Default behavior for other currencies
+        return 'N/A';
     }
   }
 
