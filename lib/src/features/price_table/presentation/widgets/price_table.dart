@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:genotek_test_app/src/features/price_table/domain/models/price_item.dart';
+import 'package:genotek_test_app/src/features/price_table/domain/models/currency.dart';
 import 'package:genotek_test_app/src/features/price_table/presentation/providers/currency_provider.dart';
 
 class PriceDataTable extends ConsumerWidget {
@@ -9,86 +10,59 @@ class PriceDataTable extends ConsumerWidget {
   const PriceDataTable({required this.prices});
 
   bool getDiscountStateForCurrency(PriceItem item, Currency currency) {
-    bool discountState;
     switch (currency) {
       case Currency.EUR:
-        discountState = item.discountStateEu ?? false;
-        print('Item: ${item.name}, EUR Discount State: $discountState');
-        print('Raw discountStateEu value: ${item.discountStateEu}');
-        return discountState;
+        return item.discountStateEu ?? false;
       case Currency.USD:
-        discountState = item.discountStateUsd ?? false;
-        print('Item: ${item.name}, USD Discount State: $discountState');
-        print('Raw discountStateUsd value: ${item.discountStateUsd}');
-        return discountState;
+        return item.discountStateUsd ?? false;
       case Currency.PEN:
-        discountState = item.discountStatePen ?? false;
-        print('Item: ${item.name}, PEN Discount State: $discountState');
-        print('Raw discountStatePen value: ${item.discountStatePen}');
-        return discountState;
+        return item.discountStatePen ?? false;
+      default:
+        return false; // Default behavior for other currencies
     }
   }
 
   String getRegularPrice(PriceItem item, Currency currency) {
-    String price;
     switch (currency) {
       case Currency.EUR:
-        price = item.startPriceEu != null
+        return item.startPriceEu != null
             ? '€${item.startPriceEu!.toStringAsFixed(2)}'
             : (item.priceEu != null
                 ? '€${item.priceEu!.toStringAsFixed(2)}'
                 : 'N/A');
-        print('Item: ${item.name}, EUR Regular Price: $price');
-        print(
-            'Raw startPriceEu: ${item.startPriceEu}, priceEu: ${item.priceEu}');
-        return price;
       case Currency.USD:
-        price = item.startPriceUsd != null
+        return item.startPriceUsd != null
             ? '\$${item.startPriceUsd!.toStringAsFixed(2)}'
             : (item.priceUsd != null
                 ? '\$${item.priceUsd!.toStringAsFixed(2)}'
                 : 'N/A');
-        print('Item: ${item.name}, USD Regular Price: $price');
-        print(
-            'Raw startPriceUsd: ${item.startPriceUsd}, priceUsd: ${item.priceUsd}');
-        return price;
       case Currency.PEN:
-        price = item.startPricePen != null
+        return item.startPricePen != null
             ? 'S/${item.startPricePen!.toStringAsFixed(2)}'
             : (item.pricePen != null
                 ? 'S/${item.pricePen!.toStringAsFixed(2)}'
                 : 'N/A');
-        print('Item: ${item.name}, PEN Regular Price: $price');
-        print(
-            'Raw startPricePen: ${item.startPricePen}, pricePen: ${item.pricePen}');
-        return price;
+      default:
+        return 'N/A'; // Default behavior for other currencies
     }
   }
 
   String getDiscountPrice(PriceItem item, Currency currency) {
-    String price;
     switch (currency) {
       case Currency.EUR:
-        price = item.discountPriceEu != null
+        return item.discountPriceEu != null
             ? '€${item.discountPriceEu!.toStringAsFixed(2)}'
             : 'N/A';
-        print('Item: ${item.name}, EUR Discount Price: $price');
-        print('Raw discountPriceEu: ${item.discountPriceEu}');
-        return price;
       case Currency.USD:
-        price = item.discountPriceUsd != null
+        return item.discountPriceUsd != null
             ? '\$${item.discountPriceUsd!.toStringAsFixed(2)}'
             : 'N/A';
-        print('Item: ${item.name}, USD Discount Price: $price');
-        print('Raw discountPriceUsd: ${item.discountPriceUsd}');
-        return price;
       case Currency.PEN:
-        price = item.discountPricePen != null
+        return item.discountPricePen != null
             ? 'S/${item.discountPricePen!.toStringAsFixed(2)}'
             : 'N/A';
-        print('Item: ${item.name}, PEN Discount Price: $price');
-        print('Raw discountPricePen: ${item.discountPricePen}');
-        return price;
+      default:
+        return 'N/A'; // Default behavior for other currencies
     }
   }
 

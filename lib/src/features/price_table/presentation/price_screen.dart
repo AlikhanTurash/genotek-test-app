@@ -4,6 +4,7 @@ import 'package:genotek_test_app/src/features/price_table/data/repositories/pric
 import 'package:genotek_test_app/src/features/price_table/domain/models/price_item.dart';
 import 'package:genotek_test_app/src/features/price_table/presentation/providers/currency_provider.dart';
 import 'package:genotek_test_app/src/features/price_table/presentation/widgets/price_table.dart';
+import 'package:genotek_test_app/src/features/price_table/presentation/widgets/currency_selector.dart';
 
 class PriceScreen extends ConsumerStatefulWidget {
   const PriceScreen({super.key});
@@ -36,20 +37,7 @@ class _PriceScreenState extends ConsumerState<PriceScreen>
       appBar: AppBar(
         title: const Text('Genotek Price List'),
         actions: [
-          DropdownButton<Currency>(
-            value: ref.watch(selectedCurrencyProvider),
-            items: Currency.values.map((currency) {
-              return DropdownMenuItem(
-                value: currency,
-                child: Text(currency.name),
-              );
-            }).toList(),
-            onChanged: (Currency? newCurrency) {
-              if (newCurrency != null) {
-                ref.read(selectedCurrencyProvider.notifier).state = newCurrency;
-              }
-            },
-          ),
+          const CurrencySelector(),
           IconButton(
             icon: const Icon(Icons.refresh),
             onPressed: () => ref.invalidate(priceRepositoryProvider),
